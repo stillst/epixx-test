@@ -1,5 +1,5 @@
-.hide{
-    background-color:#fafafa;
+.code{
+    background-color:@grey-basic;
     text-align: left;
     padding: 20px;
     margin-bottom: 40px;
@@ -7,7 +7,7 @@
 
 .tag
 {
-    color: #708090;
+    color: @code-tokens;
     display: block;
 
     &--child{
@@ -16,10 +16,10 @@
 
     &__div, &__prop{
         margin-right: 5px;
-        color: #905;
+        color: @code-purple;
     }
     &__class{
-        color: #690;
+        color: @code-green;
     }
     &__atr{
         color:#07a;
@@ -31,5 +31,34 @@
     }
     &__value{
         color:#000;
+    }
+}
+
+.code.hide
+{
+    .tag
+    {
+        color: @grey-basic;
+        &--child{
+            color: @grey-basic;
+        }
+
+        &__div, &__prop{
+            color: @grey-basic;
+        }
+        &__class{
+               color: @grey-basic;
+        }
+        &__atr{
+               color: @grey-basic;
+        }
+
+        &__content{
+              color: @grey-basic;
+        }
+        &__value{
+           color: @grey-basic;
+        }
+
     }
 }
