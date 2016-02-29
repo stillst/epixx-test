@@ -1,28 +1,3 @@
-hides = document.querySelectorAll(".hide");
-hidesClick();
-
-function hidesClick(){
-  for(var i=0; i < hides.length; i++ ){
-      hides[i].addEventListener("click", handleClick);
-  }
-}
-
-function handleClick(e){
-  this.classList.toggle("hide");
-}
-
-//Popup
-toogleHint = document.querySelector(".toogle-hint");
-popupClose = document.querySelector(".popup__close");
-popupClose.addEventListener("click", toogleClick);
-toogleHint.addEventListener("click", toogleClick);
-
-function toogleClick(e){
-  popup = document.querySelector(".popup");
-  popup.classList.toggle("popup--show");
-}
-
-
 //Timer
 var deadline = setDeadline(0,10,0,0);
 initializeClock(deadline, restart=false);
