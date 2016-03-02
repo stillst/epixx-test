@@ -1,4 +1,4 @@
-//Timer
+//sec, min, hour, day
 var deadline = setDeadline(0,10,0,0);
 initializeClock(deadline, restart=false);
 
@@ -26,33 +26,36 @@ function initializeClock(endtime){
         if(time.total<=0){
           clearInterval(timeinterval);
           if (restart){
-            initializeClock(setDeadline(0,7,0,0), restart=true);
+            initializeClock(setDeadline(10,0,0,0), restart=true);
           }
-          if (day){
-            day.innerHTML = "";
+          else{
+            if (day){
+              day.innerHTML = "";
+            }
+            if (sec){
+               sec.innerHTML = "Ваше время вышло";
+            }
+            if (hour){
+              hour.innerHTML = "";
+            }
+            if (min){
+              min.innerHTML = "";
+            }
           }
-          if (sec){
-             sec.innerHTML = "Ваше время вышло";
-          }
-          if (hour){
-            hour.innerHTML = "";
-          }
-          if (min){
-            min.innerHTML = "";
-          }
+
         }
     },1000);
 }
 
 function getTimeRemaining(endtime){
   var time = Date.parse(endtime) - Date.parse(new Date());
-  var seconds = Math.floor( (time/1000) % 60);
+  var seconds = Math.floor((time/1000) % 60);
   if (seconds < 10){
     seconds = "0" + seconds;
   }
-  var minutes = Math.floor( (time/1000/60) % 60);
-  var hours = Math.floor( (time/(1000*60*60)) % 24);
-  var days = Math.floor( time/(1000*60*60*24));
+  var minutes = Math.floor((time/1000/60) % 60);
+  var hours = Math.floor((time/(1000*60*60)) % 24);
+  var days = Math.floor(time/(1000*60*60*24));
   return {
     'total': time,
     'days': days,
@@ -70,3 +73,28 @@ function setDeadline(seconds, minutes, hours, days){
   deadline.setDate(deadline.getDate() + days);
   return deadline;
 }
+
+
+/*
+function changewordend(str, count, one, few, many, tens){
+
+  if(count > 10 && count < 20)
+  {
+    return str + many;
+  }
+
+  var remain = count%10;
+  if(remain == 1)
+  {
+    return str + one;
+  }
+  else if(remain < 5 && remain > 1)
+  {
+    return str + few;
+  }
+  else
+  {
+    return str + many;
+  }
+}
+*/
