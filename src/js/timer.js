@@ -1,5 +1,5 @@
 //sec, min, hour, day
-var deadline = setDeadline(0,10,0,0);
+var deadline = setDeadline(0,8,0,0);
 initializeClock(deadline, restart=false);
 
 function initializeClock(endtime){
@@ -33,7 +33,7 @@ function initializeClock(endtime){
               day.innerHTML = "";
             }
             if (sec){
-               sec.innerHTML = "Ваше время вышло";
+               sec.innerHTML = "Ваше время истекло";
             }
             if (hour){
               hour.innerHTML = "";
@@ -48,14 +48,16 @@ function initializeClock(endtime){
 }
 
 function getTimeRemaining(endtime){
-  var time = Date.parse(endtime) - Date.parse(new Date());
-  var seconds = Math.floor((time/1000) % 60);
+  var time = Date.parse(endtime) - Date.parse(new Date()),
+      seconds = Math.floor((time/1000) % 60),
+      minutes = Math.floor((time/1000/60) % 60),
+      hours = Math.floor((time/(1000*60*60)) % 24),
+      days = Math.floor(time/(1000*60*60*24));
+
   if (seconds < 10){
     seconds = "0" + seconds;
   }
-  var minutes = Math.floor((time/1000/60) % 60);
-  var hours = Math.floor((time/(1000*60*60)) % 24);
-  var days = Math.floor(time/(1000*60*60*24));
+
   return {
     'total': time,
     'days': days,
@@ -73,7 +75,6 @@ function setDeadline(seconds, minutes, hours, days){
   deadline.setDate(deadline.getDate() + days);
   return deadline;
 }
-
 
 /*
 function changewordend(str, count, one, few, many, tens){
