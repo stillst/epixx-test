@@ -2,7 +2,10 @@
     background-color:@grey-basic;
     text-align: left;
     padding: 20px;
-    margin-bottom: 40px;
+
+    &--left{
+        text-align: left;
+    }
 }
 
 .tag
@@ -34,31 +37,38 @@
     }
 }
 
-.code.hide
-{
-    .tag
-    {
-        color: @grey-basic;
-        &--child{
-            color: @grey-basic;
-        }
-
-        &__div, &__prop{
-            color: @grey-basic;
-        }
-        &__class{
-               color: @grey-basic;
-        }
-        &__atr{
-               color: @grey-basic;
-        }
-
-        &__content{
-              color: @grey-basic;
-        }
-        &__value{
-           color: @grey-basic;
-        }
-
-    }
+.hide{
+    transform: rotateY(180deg);
 }
+
+// .code.hide
+// {
+
+//     transform: rotateY(180deg)
+
+//     .tag
+//     {
+//         color: @grey-basic;
+//         &--child{
+//             color: @grey-basic;
+//         }
+
+//         &__div, &__prop{
+//             color: @grey-basic;
+//         }
+//         &__class{
+//                color: @grey-basic;
+//         }
+//         &__atr{
+//                color: @grey-basic;
+//         }
+
+//         &__content{
+//               color: @grey-basic;
+//         }
+//         &__value{
+//            color: @grey-basic;
+//         }
+
+//     }
+// }

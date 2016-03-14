@@ -5,11 +5,10 @@
 }
 
 .property{
-  transition: .9s;
   transform-style: preserve-3d;
   position: relative;
   cursor: pointer;
-
+    min-height: 220px;
   &__front {
     z-index: 2;
   }
@@ -32,9 +31,6 @@
 .property__back{
     display: table;
     background-color:@grey-basic;
-}
-
-.property:hover, .property__back {
     transform: rotateY(180deg);
 }
 

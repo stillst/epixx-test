@@ -70,6 +70,9 @@
 .line--mb {
   margin-bottom: 30px;
 }
+.line--mh {
+  min-height: 650px;
+}
 .row {
   font-size: 0;
 }
@@ -115,10 +118,10 @@ a {
   padding: 40px 0;
 }
 .property {
-  transition: .9s;
   transform-style: preserve-3d;
   position: relative;
   cursor: pointer;
+  min-height: 220px;
 }
 .property__front {
   z-index: 2;
@@ -139,9 +142,6 @@ a {
 .property__back {
   display: table;
   background-color: #fafafa;
-}
-.property:hover,
-.property__back {
   transform: rotateY(180deg);
 }
 .property__img {
@@ -445,7 +445,9 @@ a {
   background-color: #fafafa;
   text-align: left;
   padding: 20px;
-  margin-bottom: 40px;
+}
+.code--left {
+  text-align: left;
 }
 .tag {
   color: #708090;
@@ -472,27 +474,8 @@ a {
 .tag__value {
   color: #000;
 }
-.code.hide .tag {
-  color: #fafafa;
-}
-.code.hide .tag--child {
-  color: #fafafa;
-}
-.code.hide .tag__div,
-.code.hide .tag__prop {
-  color: #fafafa;
-}
-.code.hide .tag__class {
-  color: #fafafa;
-}
-.code.hide .tag__atr {
-  color: #fafafa;
-}
-.code.hide .tag__content {
-  color: #fafafa;
-}
-.code.hide .tag__value {
-  color: #fafafa;
+.hide {
+  transform: rotateY(180deg);
 }
 .footer {
   background-color: #fff;

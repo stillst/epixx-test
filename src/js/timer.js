@@ -1,5 +1,5 @@
 //sec, min, hour, day
-var deadline = setDeadline(0, 8, 0, 0);
+var deadline = setDeadline(0, 7, 0, 0);
 initializeClock(deadline, restart = false);
 
 function initializeClock(endtime) {
