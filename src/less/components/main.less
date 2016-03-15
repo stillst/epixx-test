@@ -5,11 +5,10 @@
 }
 
 .property{
-  transition: .9s;
   transform-style: preserve-3d;
   position: relative;
   cursor: pointer;
-
+    min-height: 220px;
   &__front {
     z-index: 2;
   }
@@ -24,22 +23,20 @@
     top: 0;
     left: 0;
     box-shadow: 2px 2px 2px #515151;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: #fff;
     font-weight: bold;
     min-height: 210px;
 }
 
 .property__back{
     display: table;
-}
-
-.property:hover, .property__back {
+    background-color:@grey-basic;
     transform: rotateY(180deg);
 }
 
 
 .property__img {
-    width: 100%;
+    width: 55%;
 }
 
 .property__txt {
