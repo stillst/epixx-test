@@ -1,3 +1,4 @@
+"use strict";
 var deg_front = 0,
     deg_back = 180,
     hides = document.querySelectorAll(".property");

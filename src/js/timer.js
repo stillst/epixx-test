@@ -1,8 +1,7 @@
-//sec, min, hour, day
-var deadline = setDeadline(0, 7, 0, 0);
-initializeClock(deadline, restart = false);
+"use strict";
+initializeClock(setDeadline(3, 0, 0, 0), false);
 
-function initializeClock(endtime) {
+function initializeClock(endtime, restart) {
     var min = document.getElementById("min"),
         sec = document.getElementById("sec"),
         hour = document.getElementById("hour"),
@@ -24,7 +23,7 @@ function initializeClock(endtime) {
         if (time.total <= 0) {
             clearInterval(timeinterval);
             if (restart) {
-                initializeClock(setDeadline(10, 0, 0, 0), restart = true);
+                initializeClock(setDeadline(10, 0, 0, 0), true);
             } else {
                 if (day) {
                     day.innerHTML = "";
