@@ -1,5 +1,5 @@
 "use strict";
-initializeClock(setDeadline(3, 0, 0, 0), false);
+initializeClock(setDeadline(0, 8, 0, 0), false);
 
 function initializeClock(endtime, restart) {
     var min = document.getElementById("min"),

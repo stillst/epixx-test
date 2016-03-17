@@ -1,10 +1,10 @@
 "use strict";
 var deg_front = 0,
-    deg_back = 180,
-    hides = document.querySelectorAll(".property");
+    deg_back = 180;
 hidesClick();
 
 function hidesClick() {
+    var hides = document.querySelectorAll(".property");
     for (var i = 0; i < hides.length; i++) {
         hides[i].addEventListener("click", handleClick);
     }
